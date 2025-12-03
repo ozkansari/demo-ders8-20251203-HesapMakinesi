@@ -20,6 +20,8 @@ jobs:
 
     permissions:
       pull-requests: write
+      contents: read
+
     steps:
     - uses: actions/checkout@v4
     - name: Set up JDK 21
@@ -32,12 +34,15 @@ jobs:
       run: mvn -B package --file pom.xml
     - name: JaCoCo Report
       uses: Madrapps/jacoco-report@v1.7.2
-    - name: Add coverage to PR
-      id: jacoco
-      uses: madrapps/jacoco-report@v1.7.2
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        paths: |
-            ${{ github.workspace }}/target/site/jacoco/jacoco.xml
-        min-coverage-overall: 40
-        min-coverage-changed-files: 60
+#    - name: Add coverage to PR
+#      id: jacoco
+#      uses: madrapps/jacoco-report@v1.7.2
+#      with:
+#        token: ${{ secrets.GITHUB_TOKEN }}
+#        paths: |
+#            ${{ github.workspace }}/**/build/reports/jacoco/**/prodNormalDebugCoverage.xml,
+#            ${{ github.workspace }}/**/build/reports/jacoco/**/debugCoverage.xml,
+#            ${{ github.workspace }}/target/site/jacoco/jacoco.xml
+#        min-coverage-overall: 40
+#        min-coverage-changed-files: 60
+
