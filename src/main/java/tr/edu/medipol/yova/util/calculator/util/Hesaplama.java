@@ -20,7 +20,7 @@ public class Hesaplama {
 	
 	public static int fark(int sayi1, int sayi2) {
 		if(sayi1 == sayi2) {
-			return 0;
+			return 0
 		} else if(sayi1 > sayi2) {
 			return Hesaplama.cikar(sayi1, sayi2);
 		} else {
