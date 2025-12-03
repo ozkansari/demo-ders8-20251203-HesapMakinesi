@@ -20,19 +20,6 @@ class HesaplamaTest {
 	}
 
 	@Test
-	void testBol() {
-		// GIVEN - on kosullar
-		int sayi1 = 999999;
-		int sayi2 = 1;
-		
-		// WHEN - test edilecek metodun cagrilmasi
-		int sonuc = Hesaplama.bol(sayi1, sayi2);
-		
-		// THEN - Kontroller
-		assertEquals(999999, sonuc);
-	}
-
-	@Test
 	void testCikar() {
 		// GIVEN - on kosullar
 		int sayi1 = 999999;
@@ -56,6 +43,32 @@ class HesaplamaTest {
 		
 		// THEN - Kontroller
 		assertEquals(999999, sonuc);
+	}
+
+	@Test
+	void testBol() {
+		// GIVEN - on kosullar
+		int sayi1 = 999999;
+		int sayi2 = 1;
+		
+		// WHEN - test edilecek metodun cagrilmasi
+		int sonuc = Hesaplama.bol(sayi1, sayi2);
+		
+		// THEN - Kontroller
+		assertEquals(999999, sonuc);
+	}
+
+	@Test
+	void testBol_sifirin_bolunmesi() {
+		// GIVEN - on kosullar
+		int sayi1 = 0;
+		int sayi2 = 1;
+		
+		// WHEN - test edilecek metodun cagrilmasi
+		int sonuc = Hesaplama.bol(sayi1, sayi2);
+		
+		// THEN - Kontroller
+		assertEquals(1, sonuc);
 	}
 
 	@Test
