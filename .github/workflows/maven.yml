@@ -19,6 +19,7 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
+      push: read
       pull-requests: write
       contents: read
 
@@ -43,7 +44,7 @@ jobs:
       uses: madrapps/jacoco-report@v1.7.1
       with:
         paths: ${{ github.workspace }}/target/site/jacoco/jacoco.xml
-        token: abc
+        token: ${{ secrets.GITHUB_TOKEN }}
         min-coverage-overall: 40
         min-coverage-changed-files: 60
 
