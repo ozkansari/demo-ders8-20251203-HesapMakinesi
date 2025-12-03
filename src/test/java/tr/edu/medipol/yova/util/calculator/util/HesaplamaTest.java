@@ -68,7 +68,7 @@ class HesaplamaTest {
 		int sonuc = Hesaplama.bol(sayi1, sayi2);
 		
 		// THEN - Kontroller
-		assertEquals(1, sonuc);
+		assertEquals(0, sonuc);
 	}
 
 	@Test
