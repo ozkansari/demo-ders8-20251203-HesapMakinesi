@@ -19,7 +19,6 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
-      push: read
       pull-requests: write
       contents: read
 
